@@ -43,6 +43,9 @@ Find the file `index.js` and complete the tasks.
 Edit the `ReadMe` file with your answers.
 
 1. In your own words, define closure (1-2 sentences).
+
+Closure is when an inner function reaches outside of its scope to grab a value defined in its parent.
+
 2. Study the following code, then answer the questions below.
 
 ```js
@@ -64,8 +67,16 @@ dansRoll();
 ```
 
 a. Where is closure used in this code? How can you tell?
+
+On line 56 at ${name}. The parameter "name" is not in the function that looks for it, but the parent of that function instead.
+
 b. Compare and contrast calling `dansRoll` the first and second time. What is always the same? What could change?
+
+The part of the string that reads "rolled a" is always the same while the variables "name" and "newRoll" change.
+
 c. What is the lexical scope of `newRoll`? 
+
+The function nested inside of the function PersonalDice(name){}
 
 
 ### Task 3 - Stretch Goals

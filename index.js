@@ -154,11 +154,20 @@ function scoreboard(inningScoreCB, inningCB, innings) {
   let totalGame = [];
   let homeScore = 0;
   let awayScore = 0;
+  let totalHomeScore = 0;
+  let totalAwayScore = 0;
   for (let i = 0; i < innings; i++){
     const currentScore = inningScoreCB(inningCB);
     homeScore = homeScore + currentScore.Home,
-    awayScore = awayScore + currentScore.Away
+    totalHomeScore = totalHomeScore + currentScore.Home,
+    awayScore = awayScore + currentScore.Away,
+    totalAwayScore = totalAwayScore + currentScore.Away
     totalGame.push(`Inning ${i+1}: Away: ${currentScore.Away} - Home: ${currentScore.Home}`);
+  }
+  if (totalHomeScore === totalAwayScore){
+    totalGame.push(`This game will require extra innings: Away ${totalAwayScore} - Home ${totalHomeScore}`)
+  } else {
+    totalGame.push(`Final Score: Away ${totalAwayScore} - Home ${totalHomeScore}`)
   }
   return totalGame;
 }

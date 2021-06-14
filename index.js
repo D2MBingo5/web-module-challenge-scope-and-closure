@@ -29,10 +29,16 @@ console.log(processFirstItem(['foo','bar'],function(str){return str+str}));
   
   1. What is the difference between counter1 and counter2?
   
+  A call of counter1 causes the function counterMaker() to run, while a call of counter2 adds 1 to its associated count variable without calling a separate function.
+
   2. Which of the two uses a closure? How can you tell?
   
+  counter2 uses closure by looking for the variable 'count' which is defined outside of its function.
+
   3. In what scenario would the counter1 code be preferable? In what scenario would 
      counter2 be better?  
+
+     counter1 would be preferable in cases where you have multiple counters tracking separate counters for comparison purposes, where counter2 would be better for tracking a single number.
 */
 
 // counter1 code
